@@ -1,9 +1,36 @@
+"use client";
+
+import { motion, useScroll, useTransform } from "motion/react";
+import Projects from "@/components/projects";
+
 export default function Home() {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 200], [0, 1]);
+  const y = useTransform(scrollY, [0, 200], [100, 0]);
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="text-4xl sm:text-6xl font-bold">aditya atyam</h1>
-      </main>
+    <div className="min-h-[200vh]">
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-3.5rem)]">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1.5, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-6xl sm:text-8xl"
+        >
+          hi, I'm Aditya Atyam
+        </motion.h1>
+      </div>
+
+      <motion.div style={{ opacity }}>
+        <motion.h2
+          style={{ y }}
+          className="text-2xl sm:text-4xl mb-20 text-center font-medium"
+        >
+          things i&apos;ve built
+        </motion.h2>
+
+        <Projects featuredOnly />
+      </motion.div>
     </div>
   );
 }
