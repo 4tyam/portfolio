@@ -1,44 +1,33 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
-
-const LinkIcon = () => (
-  <motion.svg
-    initial={{ opacity: 0, x: -10 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -10 }}
-    className="w-5 h-5 inline-block ml-2"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M15 3h6v6" />
-    <path d="M10 14 21 3" />
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-  </motion.svg>
-);
+import { motion } from "motion/react";
+import Image from "next/image";
 
 const ProjectTitle = ({ title, link }: { title: string; link: string }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-xl sm:text-2xl hover:text-foreground/70 transition-colors inline-flex items-center font-medium"
+      className="text-xl sm:text-2xl hover:text-foreground/70 transition-colors inline-flex items-center gap-2 font-medium"
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
     >
       {title}
-      <AnimatePresence>{isHovered && <LinkIcon />}</AnimatePresence>
+      <motion.svg
+        className="w-5 h-5 inline-block text-foreground/60 group-hover:text-foreground/70"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M15 3h6v6" />
+        <path d="M10 14 21 3" />
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      </motion.svg>
     </motion.a>
   );
 };
@@ -102,7 +91,7 @@ export default function Projects({ featuredOnly = false }: ProjectsProps) {
           className={`${
             index === filteredProjects.length - 1
               ? ""
-              : "border-b border-b-slate-300"
+              : "border-b sm:border-b-slate-300"
           } py-32`}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center px-6 sm:px-20 max-w-7xl mx-auto">
@@ -119,10 +108,13 @@ export default function Projects({ featuredOnly = false }: ProjectsProps) {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className="object-contain"
+                width={1000}
+                height={1000}
+                priority
               />
             </motion.div>
           </div>

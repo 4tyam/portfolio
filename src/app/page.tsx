@@ -15,9 +15,14 @@ export default function Home() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1.5, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-6xl sm:text-8xl"
+          className="text-5xl sm:text-8xl text-center font-medium sm:font-normal"
         >
-          hi, I'm Aditya Atyam
+          <span className="sm:hidden">
+            hi, I&apos;m
+            <br />
+            Aditya Atyam
+          </span>
+          <span className="hidden sm:block">hi, I&apos;m Aditya Atyam</span>
         </motion.h1>
       </div>
 

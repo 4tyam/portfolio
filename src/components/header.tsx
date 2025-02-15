@@ -44,6 +44,7 @@ const NavItem = ({
     <Link
       href={link}
       className="mt-2 text-sm sm:text-base relative flex flex-col items-center"
+      draggable={false}
     >
       <motion.span
         initial={{ y: 0 }}
