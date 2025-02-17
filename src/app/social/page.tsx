@@ -12,7 +12,7 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     name: "email",
-    url: "mailto:aditya@atyam.me",
+    url: "mailto:aditya@aty.am",
     username: "aditya@aty.am",
   },
   {
