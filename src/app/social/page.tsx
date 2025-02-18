@@ -46,7 +46,7 @@ const SocialLinkItem = ({ name, url, username }: SocialLink) => {
       target="_blank"
       rel="noopener noreferrer"
       draggable={false}
-      className="group flex items-center gap-10 py-8"
+      className="group flex items-center justify-between w-full py-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ x: 20 }}
