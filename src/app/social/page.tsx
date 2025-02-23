@@ -73,7 +73,7 @@ const SocialLinkItem = ({ name, url, username }: SocialLink) => {
 
 export default function Social() {
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center">
+    <div className="mt-14 flex flex-col items-center justify-center py-14 sm:py-24">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
