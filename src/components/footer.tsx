@@ -4,11 +4,11 @@ import { motion } from "motion/react";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-12 mt-auto border-t border-border">
+    <footer className="w-full py-4 sm:py-8 mt-auto border-t border-border">
       <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-8 px-6 sm:px-20 max-w-7xl mx-auto">
-        <span className="hidden sm:block text-6xl">aditya atyam</span>
+        <span className="hidden sm:block text-4xl">aditya atyam</span>
         <div className="w-full sm:w-auto flex flex-row sm:flex-col justify-between sm:justify-center items-center sm:items-end sm:gap-8">
-          <span className="sm:hidden text-4xl">
+          <span className="sm:hidden text-2xl">
             aditya <br /> atyam
           </span>
           <div className="flex items-center justify-center sm:justify-end gap-6 sm:mt-4">
