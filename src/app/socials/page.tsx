@@ -45,7 +45,7 @@ const socialLinks: SocialLink[] = [
     ),
   },
   {
-    name: "twitter",
+    name: "X",
     url: "https://twitter.com/4tyam",
     username: "4tyam",
     icon: <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />,
@@ -58,7 +58,7 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
-const SocialLinkItem = ({ name, url, username, icon }: SocialLink) => {
+const SocialLinkItem = ({ name, url, username }: SocialLink) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -67,7 +67,7 @@ const SocialLinkItem = ({ name, url, username, icon }: SocialLink) => {
       target="_blank"
       rel="noopener noreferrer"
       draggable={false}
-      className="group flex items-center justify-between w-full py-5 sm:py-8 relative px-3 sm:px-4"
+      className="group flex items-center justify-between w-full py-5 sm:py-7 relative px-3 sm:px-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ x: 10 }}
@@ -75,17 +75,7 @@ const SocialLinkItem = ({ name, url, username, icon }: SocialLink) => {
       onHoverEnd={() => setIsHovered(false)}
     >
       <div className="flex items-center gap-3 sm:gap-4">
-        <motion.div
-          className="w-5 h-5 sm:w-6 sm:h-6 text-accent flex items-center justify-center flex-shrink-0"
-          animate={{
-            scale: isHovered ? 1.2 : 1,
-            rotate: isHovered ? 5 : 0,
-          }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          {icon}
-        </motion.div>
-        <motion.span className="text-lg sm:text-2xl font-medium">
+        <motion.span className="text-lg sm:text-xl font-medium">
           {name}
         </motion.span>
       </div>
@@ -96,7 +86,7 @@ const SocialLinkItem = ({ name, url, username, icon }: SocialLink) => {
           opacity: isHovered ? 1 : 0,
           x: isHovered ? 0 : -10,
         }}
-        className="hidden sm:block text-foreground/60 text-base sm:text-lg"
+        className="hidden sm:block text-foreground/60 text-base"
       >
         <span className="font-mono">{username}</span>
         <motion.span
@@ -122,16 +112,16 @@ const SocialLinkItem = ({ name, url, username, icon }: SocialLink) => {
   );
 };
 
-export default function Social() {
+export default function Socials() {
   return (
-    <div className="mt-8 sm:mt-14 flex flex-col items-center justify-center py-20 sm:py-24 w-full overflow-x-hidden">
+    <div className="mt-4 sm:mt-8 flex flex-col items-center justify-center py-16 sm:py-20 w-full overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-10 sm:mb-16 text-center px-4"
+        className="mb-6 sm:mb-10 text-center px-4"
       >
         <h1 className="text-2xl sm:text-4xl font-medium mb-2">
-          let&apos;s <span className="text-accent">connect</span>
+          <span className="text-accent">connect</span>
         </h1>
         <p className="text-foreground/60 text-sm sm:text-lg">
           find me on any of these platforms
@@ -139,10 +129,6 @@ export default function Social() {
       </motion.div>
 
       <div className="flex flex-col w-full max-w-md relative px-6 sm:px-8">
-        {/* Background gradient decorations */}
-        <div className="absolute -left-20 -top-10 w-40 h-40 bg-accent/5 rounded-full filter blur-3xl" />
-        <div className="absolute -right-20 -bottom-10 w-40 h-40 bg-accent/5 rounded-full filter blur-3xl" />
-
         {socialLinks.map((link, index) => (
           <motion.div
             key={link.name}

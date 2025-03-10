@@ -51,7 +51,7 @@ export const projects: Project[] = [
   {
     title: "Review Blocks",
     description:
-      "course review platform to help you choose your electives better",
+      "course review website to help you choose your electives better",
     link: "https://reviewblocks.com",
     image: "/project/reviewblocks.png",
     featured: true,
@@ -59,66 +59,55 @@ export const projects: Project[] = [
   {
     title: "Xeno Events",
     description:
-      "event management platform where you can create, manage and register for events",
-    link: "https://github.com/4tyam/project-three",
+      "events platform where you can create, manage and register for events",
+    link: "https://github.com/4tyam/xeno-events",
     image: "/project/xenoevents.png",
     featured: true,
   },
 ];
 
 interface ProjectsProps {
-  featuredOnly?: boolean;
+  featured?: boolean;
 }
 
-export default function Projects({ featuredOnly = false }: ProjectsProps) {
-  const filteredProjects = featuredOnly
+export default function Projects({ featured }: ProjectsProps) {
+  const filteredProjects = featured
     ? projects.filter((project) => project.featured)
     : projects;
 
   return (
-    <div className="flex flex-col">
-      {filteredProjects.map((project, index) => (
-        <motion.div
-          key={project.title}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2 * index,
-            ease: [0.21, 0.47, 0.32, 0.98],
-          }}
-          className={`${
-            index === filteredProjects.length - 1
-              ? ""
-              : "border-b sm:border-b-slate-300"
-          } py-32`}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center px-6 sm:px-20 max-w-7xl mx-auto">
-            <div className="flex flex-col">
-              <div className="inline-block">
-                <ProjectTitle title={project.title} link={project.link} />
-              </div>
-              <p className="text-foreground/60 text-base sm:text-lg">
+    <div className="space-y-24">
+      {filteredProjects.map((project) => (
+        <div key={project.title} className="group relative">
+          <div className="flex justify-between items-start gap-8">
+            <div className="space-y-0.5">
+              <motion.a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg sm:text-xl font-medium hover:text-foreground/70 transition-colors inline-block"
+                initial={{ y: 0 }}
+                whileHover={{ y: -3 }}
+                transition={{ duration: 0.2 }}
+              >
+                {project.title}
+              </motion.a>
+              <p className="text-foreground/80 max-w-xl text-sm sm:text-base">
                 {project.description}
               </p>
             </div>
-            <motion.div
-              className="relative h-[200px] sm:h-[300px] rounded-lg overflow-hidden bg-foreground/5"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                className="object-contain"
-                width={1000}
-                height={1000}
-                priority
-              />
-            </motion.div>
+            {project.image && (
+              <div className="relative w-48 h-32 flex-shrink-0">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            )}
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

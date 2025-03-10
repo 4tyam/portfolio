@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="fixed w-full top-0 z-50">
-      <div className="backdrop-blur-xl bg-background/40">
+      <div className="backdrop-blur-lg bg-background/40">
         <nav className="flex justify-center items-center max-w-6xl mx-auto p-4">
           <div className="flex gap-10">
             <NavItem name="home" link="/" isActive={isActive("/")} />
@@ -20,9 +20,9 @@ export default function Header() {
               isActive={isActive("/projects")}
             />
             <NavItem
-              name="social"
-              link="/social"
-              isActive={isActive("/social")}
+              name="socials"
+              link="/socials"
+              isActive={isActive("/socials")}
             />
           </div>
         </nav>
