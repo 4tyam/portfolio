@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -15,9 +15,12 @@ export default function Footer() {
             aditya atyam
           </Link>
           <div className="flex items-center justify-center sm:justify-end gap-3 sm:gap-6 sm:mt-1">
-            <SocialLink href="https://twitter.com/4tyam" label="X" />
+            {/* <SocialLink href="https://twitter.com/4tyam" label="X" />
             <SocialLink href="https://github.com/4tyam" label="github" />
-            <SocialLink href="https://linkedin.com/in/atyam" label="linkedin" />
+            <SocialLink href="https://linkedin.com/in/atyam" label="linkedin" /> */}
+            <a className="text-sm sm:text-base" href="mailto: aditya@aty.am">
+              aditya@aty.am
+            </a>
           </div>
         </div>
       </div>
@@ -25,15 +28,15 @@ export default function Footer() {
   );
 }
 
-const SocialLink = ({ href, label }: { href: string; label: string }) => (
-  <motion.a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-foreground/50 hover:text-foreground/100 transition-colors text-xs sm:text-sm"
-    whileHover={{ y: -4 }}
-    transition={{ duration: 0.2 }}
-  >
-    {label}
-  </motion.a>
-);
+// const SocialLink = ({ href, label }: { href: string; label: string }) => (
+//   <motion.a
+//     href={href}
+//     target="_blank"
+//     rel="noopener noreferrer"
+//     className="text-foreground/50 hover:text-foreground/100 transition-colors text-xs sm:text-sm"
+//     whileHover={{ y: -4 }}
+//     transition={{ duration: 0.2 }}
+//   >
+//     {label}
+//   </motion.a>
+// );

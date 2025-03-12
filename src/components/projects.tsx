@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+
 interface Project {
   title: string;
   description: string;
@@ -19,7 +21,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: "Review Blocks",
+    title: "ReviewBlocks",
     description:
       "course review website to help you choose your electives better",
     link: "https://reviewblocks.com",
@@ -29,7 +31,7 @@ export const projects: Project[] = [
   {
     title: "Xeno Events",
     description:
-      "events platform where you can create, manage and register for events",
+      "events platform where you can create, manage and register for events. includes a qr based ticketing system",
     link: "https://github.com/4tyam/xeno-events",
     image: "/project/xenoevents.png",
     featured: true,
@@ -40,6 +42,10 @@ interface ProjectsProps {
   featured?: boolean;
 }
 
+const linkFilter = (link: string) => {
+  return link.replace(/^https?:\/\/|\/$/g, "");
+};
+
 export default function Projects({ featured }: ProjectsProps) {
   const filteredProjects = featured
     ? projects.filter((project) => project.featured)
@@ -49,25 +55,35 @@ export default function Projects({ featured }: ProjectsProps) {
     <div className="space-y-24">
       {filteredProjects.map((project) => (
         <div key={project.title} className="group relative">
-          <div className="flex justify-between items-start gap-8">
-            <div className="space-y-0.5">
-              <motion.a
-                href={project.link}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+            <div className="flex-1 flex flex-col justify-between space-y-4 sm:space-y-0">
+              <div className="space-y-1">
+                <motion.a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg sm:text-xl font-medium hover:text-foreground/70 transition-colors inline-block"
+                  initial={{ y: 0 }}
+                  whileHover={{ y: -3 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {project.title}
+                </motion.a>
+                <p className="text-foreground/80 max-w-xl text-sm sm:text-base">
+                  {project.description}
+                </p>
+              </div>
+              <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg sm:text-xl font-medium hover:text-foreground/70 transition-colors inline-block"
-                initial={{ y: 0 }}
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.2 }}
+                href={project.link}
+                className="text-xs text-gray-500 italic hover:text-foreground/80 transition-colors"
               >
-                {project.title}
-              </motion.a>
-              <p className="text-foreground/80 max-w-xl text-sm sm:text-base">
-                {project.description}
-              </p>
+                {linkFilter(project.link)}
+              </Link>
             </div>
             {project.image && (
-              <div className="relative w-48 h-32 flex-shrink-0">
+              <div className="relative w-full sm:w-48 h-48 sm:h-32 flex-shrink-0 order-first sm:order-last">
                 <Image
                   src={project.image}
                   alt={project.title}
