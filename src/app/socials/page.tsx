@@ -14,8 +14,8 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     name: "email",
-    url: "mailto:aditya@aty.am",
-    username: "aditya@aty.am",
+    url: "mailto:a@aty.am",
+    username: "a@aty.am",
     icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />,
   },
   {
@@ -88,7 +88,7 @@ const SocialLinkItem = ({ name, url, username }: SocialLink) => {
         }}
         className="hidden sm:block text-foreground/60 text-base"
       >
-        <span className="font-mono">{username}</span>
+        <span>{username}</span>
         <motion.span
           className="ml-2"
           animate={{ x: isHovered ? 5 : 0 }}
@@ -97,7 +97,7 @@ const SocialLinkItem = ({ name, url, username }: SocialLink) => {
           →
         </motion.span>
       </motion.div>
-      <span className="sm:hidden text-foreground/60 text-xs font-mono truncate ml-2 max-w-[100px]">
+      <span className="sm:hidden text-foreground/60 text-xs truncate ml-2 max-w-[100px]">
         {username}
       </span>
 
