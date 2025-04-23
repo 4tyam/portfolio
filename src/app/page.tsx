@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="text-4xl sm:text-6xl font-medium">Aditya Atyam</h1>
 
         <p className="text-sm sm:text-lg text-foreground/80">
-          i study electronics and finance at bits pilani and like to build stuff
+          I study electronics and finance at bits pilani and like to build stuff
           in my free time.
         </p>
 
