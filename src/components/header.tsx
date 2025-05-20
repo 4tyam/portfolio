@@ -58,7 +58,7 @@ const NavItem = ({
       </motion.span>
       {isActive && (
         <motion.div
-          className="absolute -bottom-1 h-[1px] bg-foreground"
+          className="absolute -bottom-1 h-[2px] bg-foreground"
           layoutId="navunderline"
           style={{
             width: "2.5rem",
