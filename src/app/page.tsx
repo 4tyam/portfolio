@@ -4,16 +4,22 @@ import Projects from "@/components/projects";
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-24 sm:py-28">
-      <div className="space-y-4">
-        <h1 className="text-4xl sm:text-6xl font-medium">Aditya Atyam</h1>
+    <div className="mt-16 flex flex-col items-center justify-center py-8 sm:py-16 w-full px-4 sm:px-6">
+      <div className="w-full max-w-5xl">
+        <div className="mb-12 sm:mb-20">
+          <h1 className="text-4xl sm:text-6xl font-medium text-center">
+            Aditya Atyam
+          </h1>
+          <p className="text-sm sm:text-xl text-foreground/80 mt-4 text-center">
+            I study electronics and finance at bits pilani and skip classes to
+            build stuff
+          </p>
+        </div>
 
-        <p className="text-sm sm:text-lg text-foreground/80">
-          I study electronics and finance at bits pilani and skip classes to build stuff
-        </p>
-
-        <div className="pt-8">
-          <h2 className="text-2xl sm:text-4xl font-medium mb-10">projects</h2>
+        <div>
+          {/* <h2 className="text-2xl sm:text-4xl font-medium mb-16 text-center">
+            stuff
+          </h2> */}
           <Projects featured={true} />
         </div>
       </div>

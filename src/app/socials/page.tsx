@@ -114,15 +114,15 @@ const SocialLinkItem = ({ name, url, username }: SocialLink) => {
 
 export default function Socials() {
   return (
-    <div className="mt-4 sm:mt-8 flex flex-col items-center justify-center py-16 sm:py-20 w-full overflow-x-hidden">
+    <div className="mt-16 flex flex-col items-center justify-center py-8 sm:py-16 w-full overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-6 sm:mb-10 text-center px-4"
       >
-        <h1 className="text-2xl sm:text-4xl font-medium mb-2">
-          <span className="text-accent">connect</span>
-        </h1>
+        <h2 className="text-3xl sm:text-4xl font-medium mb-4 text-center">
+          socials
+        </h2>
         <p className="text-foreground/60 text-sm sm:text-lg">
           find me on any of these platforms
         </p>
