@@ -11,8 +11,7 @@ export default function Home() {
             Aditya Atyam
           </h1>
           <p className="text-sm sm:text-xl text-foreground/80 mt-4 text-center mb-32">
-            I study electronics and finance at bits pilani and skip classes to
-            build stuff
+            I study electronics and finance at bits pilani and build stuff in my free time
           </p>
         </div>
 
