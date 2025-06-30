@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     title: "HyperEdit",
     description: "transform your photos into beautiful art",
-    link: "https://hyperedit.co",
+    link: "https://styles.hyperedit.co",
     image: "/project/hyperedit.png",
     featured: true,
   },
