@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Mail, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 
 interface SocialLink {
   name: string;
