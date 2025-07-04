@@ -45,12 +45,6 @@ const socialLinks: SocialLink[] = [
     ),
   },
   {
-    name: "twitter",
-    url: "https://twitter.com/4tyam",
-    username: "4tyam",
-    icon: <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />,
-  },
-  {
     name: "instagram",
     url: "https://instagram.com/4tyam",
     username: "4tyam",
