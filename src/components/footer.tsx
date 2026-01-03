@@ -18,7 +18,10 @@ export default function Footer() {
             {/* <SocialLink href="https://twitter.com/4tyam" label="X" />
             <SocialLink href="https://github.com/4tyam" label="github" />
             <SocialLink href="https://linkedin.com/in/atyam" label="linkedin" /> */}
-            <a className="text-sm sm:text-base">A4 Labs LLC</a>
+            {/* <a className="text-sm sm:text-base">A4 Labs LLC</a> */}
+            <a className="text-sm sm:text-base" href="mailto:a@aty.am">
+              a@aty.am
+            </a>
           </div>
         </div>
       </div>
