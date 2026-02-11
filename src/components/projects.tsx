@@ -14,7 +14,7 @@ interface Project {
 export const projects: Project[] = [
   {
     title: "HyperEdit",
-    description: "edit photos like a photoshop pro",
+    description: "edit images like a photoshop pro",
     link: "https://hyperedit.co",
     image: "/project/hyperedit-2.png",
     featured: true,
